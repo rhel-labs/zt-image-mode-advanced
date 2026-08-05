@@ -1,0 +1,53 @@
+= Image Mode Advanced Workflows
+
+Welcome to the Advanced Workflows lab for RHEL Image Mode! This lab covers derived images, team collaboration patterns, and container best practices.
+
+== What You'll Learn
+
+In this lab, you will:
+
+1. **Build derived images** - Create specialized images based on a standard baseline
+2. **Organize repositories** - Structure Containerfiles and configuration for maintainability
+3. **Use multi-stage builds** - Separate build-time dependencies from runtime requirements
+
+== Key Concepts
+
+=== Derived Images
+
+One of the most powerful aspects of image mode is the ability to build images FROM other bootc images:
+
+* **Operations team** builds a secure, compliant baseline
+* **Development team** builds FROM that baseline, adding applications
+* **Both teams** maintain their focus without duplicating work
+
+=== Build Best Practices
+
+Container development practices apply to bootc images:
+
+* **Multi-stage builds** - Keep final images lean
+* **Layer caching** - Optimize build times
+* **Repository organization** - Separate concerns (app code, system config, build files)
+
+== Lab Environment
+
+Your lab environment includes:
+
+* **Build Host** - With both a secure baseline image AND an application to integrate
+* **Application VM** - Will be deployed during the lab from your derived image
+
+[NOTE]
+====
+This lab builds on both fundamentals and security concepts. Familiarity with those topics will help you understand the integration patterns demonstrated here.
+====
+
+== Prerequisites
+
+Familiarity with:
+
+* RHEL Image Mode fundamentals
+* Container concepts (FROM, COPY, RUN, multi-stage builds)
+* Security baseline concepts from the Security lab (helpful but not required)
+
+== Ready to Begin?
+
+Click **Next** to start building derived images!

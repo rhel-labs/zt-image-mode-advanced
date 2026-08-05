@@ -1,0 +1,39 @@
+= Image Mode Advanced Workflows
+
+A hands-on lab for derived images, team collaboration, and container best practices.
+
+== Lab Overview
+
+Learn advanced patterns including building from standard baselines, repository organization, and multi-stage builds.
+
+**Duration:** 20-25 minutes
+
+**What You'll Learn:**
+
+* Building derived images from a secure baseline
+* Organizing repositories for maintainability
+* Using multi-stage builds for SELinux modules
+* Team collaboration patterns
+
+== Lab Environment
+
+* **Build Host** - With secure baseline AND application code
+* **Application VM** - Deployed from your derived image
+
+== Prerequisites
+
+* Image Mode fundamentals
+* Container concepts (FROM, COPY, RUN, multi-stage builds)
+* Helpful: Security lab concepts
+
+== Lab Modules
+
+1. **Lab Introduction** - Derived images and collaboration
+2. **Building from Standard Base** - Creating derived images
+3. **Container Best Practices** - Multi-stage builds and optimization
+
+== Related Labs
+
+* Image Mode Fundamentals (prerequisite)
+* Image Mode Security and Compliance (helpful background)
+* Image Mode Runtime Operations
