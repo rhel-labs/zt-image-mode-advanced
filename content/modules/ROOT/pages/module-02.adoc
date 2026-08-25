@@ -127,9 +127,9 @@ podman push registry-{guid}.{domain}/app-test:v2
 
 [#switch-run]
 == Switch and test the image
-==== _Click on the tab labeled "Sec SSH session"_ 
+==== _Click on the tab labeled "Bootc VM"_ 
 
-Since we had issues with switching in our initial troubleshooting, log into the Security VM to test the new build.
+Since we had issues with switching in our initial troubleshooting, log into the Bootc VM to test the new build.
 
 We'll use the same `bootc switch` command we did on the previous system and just let `bootc` restart the host once it's done.
 
@@ -377,14 +377,14 @@ Having a serial console makes the next test more interesting, and luckily we can
 
 [source,bash,role="execute",subs=attributes+]
 ----
-virsh console security-vm
+virsh console bootc-vm
 ----
 
 You may need to hit `Enter` to see the login prompt.
 Once you do you can proceed to the next step.
 If you like you can execute the next `bootc` instruction in this serial session instead of the web terminal.
 
-==== _Switch to the "Sec SSH session" tab to test the latest build of the image._
+==== _Switch to the "Bootc VM" tab to test the latest build of the image._
 
 We briefly mentioned the idea of "soft reboots" earlier.
 Soft reboots are a new feature of `systemd` that restarts user space (including re-executing itself) without fully restarting the host.
@@ -405,7 +405,7 @@ Not only was it quicker, but after `systemd` shut the system down, we never got 
 
 To exit the `virsh console` hit `Ctrl+]`
 
-==== _Switch to the "Sec SSH session" tab_
+==== _Switch to the "Bootc VM" tab_
 Since soft reboots are a feature of `systemd`, `systemctl show` will provide information as with any other property, like the number of soft reboots for the host.
 [source,bash,role="execute",subs=attributes+]
 ----

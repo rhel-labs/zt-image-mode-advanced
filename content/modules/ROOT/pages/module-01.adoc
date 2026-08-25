@@ -33,7 +33,7 @@ Container development practices apply to bootc images:
 Your lab environment includes:
 
 * **Build Host** - With both a secure baseline image AND an application to integrate
-* **Application VM** - Will be deployed during the lab from your derived image
+* **Bootc VM** - Will be deployed during the lab from your derived image
 
 [NOTE]
 ====

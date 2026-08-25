@@ -15,10 +15,10 @@ antora:
       solveButton: false
 
 tabs:
-  - name: ">_ Build Host"
-    url: /wetty
-  - name: ">_ Application VM"
-    command: /root/.wait_for_app_vm.sh
+  - name: "Build host terminal"
+    url: /wetty/ssh/root
+  - name: ">_ Bootc VM"
+    url: /wetty_bootc_vm/ssh/root
     modules:
       - module-02
       - module-03

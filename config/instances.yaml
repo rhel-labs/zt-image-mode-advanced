@@ -18,7 +18,40 @@ virtualmachines:
       - libvirt
       - virt-install
       - qemu-kvm
-  - name: "app-vm"
+      - libvirt-nss
+      - nano
+      - nginx
+      - openscap-utils
+      - scap-security-guide
+    services:
+      - name: registry-http
+        ports:
+          - port: 80
+            protocol: TCP
+            targetPort: 80
+            name: registry-http
+      - name: registry
+        ports:
+          - port: 443
+            protocol: TCP
+            targetPort: 443
+            name: registry
+    routes:
+      - name: registry-http
+        host: registry
+        service: registry-http
+        targetPort: 80
+        tls: false
+        path: "/.well-known/"
+      - name: registry
+        host: registry
+        service: registry
+        targetPort: 443
+        tls: true
+    terminals:
+      - name: wetty_bootc_vm
+        command: /root/.wait_for_bootc_vm.sh
+  - name: "bootc-vm"
     image: "rhel-10-0-07-09-25-3"
     bootloader: efi
     memory: "4G"
@@ -26,6 +59,6 @@ virtualmachines:
     image_size: "40G"
     tags:
       - key: "AnsibleGroup"
-        value: "app_hosts"
+        value: "bootc_hosts"
     networks:
       - default

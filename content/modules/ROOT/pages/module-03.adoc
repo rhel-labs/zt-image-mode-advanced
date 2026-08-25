@@ -114,7 +114,7 @@ Trying to pull registry-j475j.apps.ocpvdev01.rhdp.net/base:latest...
 podman push registry-{guid}.{domain}/app-test:v2
 ----
 
-==== _Switch to the "Security SSH session" tab to test the latest build of the image._
+==== _Switch to the "Bootc VM" tab to test the latest build of the image._
 [source,bash,role="execute",subs=attributes+]
 ----
 sudo bootc update --soft-reboot=required --apply

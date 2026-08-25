@@ -18,7 +18,7 @@ Learn advanced patterns including building from standard baselines, repository o
 == Lab Environment
 
 * **Build Host** - With secure baseline AND application code
-* **Application VM** - Deployed from your derived image
+* **Bootc VM** - Deployed from your derived image
 
 == Prerequisites
 
