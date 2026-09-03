@@ -176,7 +176,7 @@ git -C $TMPDIR checkout
 if [ -d $TMPDIR/${EXAMPLE} ]; then
     cp -r $TMPDIR/${EXAMPLE} /root/${EXAMPLE}
     mv $TMPDIR/${EXAMPLE} ${EXAMPLE}
-    cp ${EXAMPLE}/examples/bootc-version/Containerfile /root/bootc-version/
+    cp /root/${EXAMPLE}/examples/bootc-version/Containerfile /root/bootc-version/
 fi
 rm -rf $TMPDIR
 
