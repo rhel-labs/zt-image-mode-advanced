@@ -26,10 +26,11 @@ EOF
 
 # Pull needed images
 BOOTC_RHEL_VER=10.1
+BOOTC_LAB_IMAGE=ghcr.io/rhel-labs/im-workshop-secured:latest
 podman pull registry.redhat.io/rhel10/rhel-bootc:$BOOTC_RHEL_VER
 podman pull registry.redhat.io/rhel10/bootc-image-builder:$BOOTC_RHEL_VER
 podman pull quay.io/fedora/fedora-bootc:latest
-podman pull ghcr.io/rhel-labs/im-workshop-ops:latest
+podman pull $BOOTC_LAB_IMAGE
 
 # set up SSL for fully functioning registry
 dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-10.noarch.rpm
@@ -119,7 +120,7 @@ EOF
 git clone --single-branch --branch bootc https://github.com/rhel-labs/python-hostinfo.git /root/bootc-version
 
 # Tag and push the baseline image to the local registry (students build FROM this)
-podman tag ghcr.io/rhel-labs/im-workshop-ops:latest registry-${GUID}.${DOMAIN}/base
+podman tag $BOOTC_LAB_IMAGE registry-${GUID}.${DOMAIN}/base
 podman push registry-${GUID}.${DOMAIN}/base
 
 # Build and deploy the initial VM from the baseline image
